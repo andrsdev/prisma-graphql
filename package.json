@@ -1,0 +1,17 @@
+{
+  "name": "prisma-graphql",
+  "version": "1.0.0",
+  "description": "Graphql API bulit with prisma, typescript and JWT",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphql",
+    "prisma",
+    "typescript",
+    "jwt"
+  ],
+  "author": "Andrés Sanabria <andrs.dev@gmail.com>",
+  "license": "MIT"
+}
