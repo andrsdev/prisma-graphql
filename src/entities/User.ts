@@ -4,6 +4,7 @@ import { ObjectType, Field } from 'type-graphql';
 export class User {
   @Field()
   email: string;
+
   @Field(() => String, { nullable: true })
   name?: string | null;
 }

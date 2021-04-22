@@ -1,10 +1,35 @@
 import { User } from 'src/entities/User';
-import { Resolver, Query } from 'type-graphql';
+import { Resolver, Query, Mutation, Arg } from 'type-graphql';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 @Resolver(User)
 export class UserResolver {
   @Query(() => String)
   hello() {
     return 'world';
+  }
+
+  @Query(() => [User])
+  async users() {
+    return prisma.user.findMany();
+  }
+
+  @Mutation(() => Boolean)
+  async create(@Arg('name') name: string, @Arg('email') email: string) {
+    try {
+      await prisma.user.create({
+        data: {
+          name: name,
+          email: email,
+        },
+      });
+    } catch (err) {
+      console.error(err);
+      return false;
+    }
+
+    return true;
   }
 }
