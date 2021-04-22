@@ -13,7 +13,7 @@ export class UserResolver {
 
   //Testing eslint
   @Query(() => [User])
-  async users() {
+  async users(): Promise<User[]> {
     return prisma.user.findMany();
   }
 
