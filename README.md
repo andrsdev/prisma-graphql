@@ -12,3 +12,7 @@ Graphql API bulit with prisma, typescript and JWT.
 ### How to setup prisma
 
 https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch-typescript-postgres
+
+### Other
+
+- [How to setup postgress users access](https://www.postgresql.org/docs/9.5/auth-pg-hba-conf.html)
