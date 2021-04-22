@@ -3,7 +3,7 @@
 
 files=$(git diff --name-only --cached)
 
-if [ ! -z $files ]; then
+if [ ! -z "$files" ]; then
   npx prettier --write $files --ignore-unknown
   git add $files
 fi
