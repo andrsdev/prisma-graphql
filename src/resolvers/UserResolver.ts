@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 @Resolver(User)
 export class UserResolver {
   @Query(() => String)
-  hello() {
+  hello(): string {
     return 'world';
   }
 
@@ -17,7 +17,10 @@ export class UserResolver {
   }
 
   @Mutation(() => Boolean)
-  async create(@Arg('name') name: string, @Arg('email') email: string) {
+  async create(
+    @Arg('name') name: string,
+    @Arg('email') email: string
+  ): Promise<boolean> {
     try {
       await prisma.user.create({
         data: {
