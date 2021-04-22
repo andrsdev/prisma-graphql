@@ -4,7 +4,7 @@
 files=$(git diff --name-only --cached)
 
 if [ ! -z "$files" ]; then
-  npx eslint $files
+  npx eslint $files --fix
   npx prettier --write $files --ignore-unknown
   git add $files
 fi
