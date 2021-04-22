@@ -12,7 +12,7 @@ export class UserResolver {
   }
 
   @Query(() => [User])
-  async users(): Promise<User[]> {
+  async users() {
     return prisma.user.findMany();
   }
 
