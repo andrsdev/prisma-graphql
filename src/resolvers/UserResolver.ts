@@ -11,6 +11,7 @@ export class UserResolver {
     return 'world';
   }
 
+  //Testing eslint
   @Query(() => [User])
   async users() {
     return prisma.user.findMany();
