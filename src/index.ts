@@ -1,16 +1,15 @@
-// import { PrismaClient } from '@prisma/client';
-import 'reflect-metadata'; //Required from type-graphql
+import 'reflect-metadata'; //Required for type-graphql
 import { buildSchemaSync } from 'type-graphql';
 import { ApolloServer } from 'apollo-server-express';
+import { HelloResolver } from 'src/resolvers/HelloResolver';
 import { UserResolver } from 'src/resolvers/UserResolver';
 import express from 'express';
-// const prisma = new PrismaClient();
 
 const app = express();
 
 const server = new ApolloServer({
   schema: buildSchemaSync({
-    resolvers: [UserResolver],
+    resolvers: [HelloResolver, UserResolver],
   }),
 });
 
